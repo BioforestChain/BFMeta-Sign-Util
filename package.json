@@ -1,9 +1,9 @@
 {
   "name": "@bfchain/sign-util",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "钱包生成签名的工具包",
-  "main": "build/cjs/index.js",
-  "types": "build/cjs/index.d.ts",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
   "scripts": {
     "dev": "tsc --build -w",
     "clear": "node ./scripts/clear.js",
@@ -22,8 +22,7 @@
     "tslib": "^2.4.1"
   },
   "files": [
-    "build/cjs",
-    "build/esm"
+    "build/*"
   ],
   "dependencies": {
     "typescript": "^4.9.3"
