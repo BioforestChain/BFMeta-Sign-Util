@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig",
+  "mixin": ["./tsconfig.json", "../tsconfig-base.esm.json"],
+  "compilerOptions": {
+    "outDir": "../build/esm"
+  }
+}
