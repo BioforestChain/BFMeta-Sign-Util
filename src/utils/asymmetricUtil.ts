@@ -48,6 +48,46 @@ export class AsymmetricUtil {
   }
 
   /**
+   * 生成公私钥对
+   *
+   * @param secret
+   * @returns
+   */
+  async createKeypair(secret: string) {
+    return this.__keypairHelper.create(await this.__cryptoHelper.sha256(secret));
+  }
+
+  /**
+   * 根据私钥生成公私钥对
+   *
+   * @param secretKey
+   * @returns
+   */
+  createKeypairBySecretKey(secretKey: Uint8Array) {
+    return this.__keypairHelper.createBySecretKey(secretKey);
+  }
+
+  /**
+   * 根据私钥生成公私钥对
+   *
+   * @param secretKey
+   * @returns
+   */
+  createKeypairBySecretKeyString(secretKey: string) {
+    return this.__keypairHelper.createBySecretKey(this.__buffer.from(secretKey, "hex"));
+  }
+
+  /**
+   * 获取公钥
+   *
+   * @param secret
+   * @returns
+   */
+  async getPublicKeyFromSecret(secret: string) {
+    return (await this.createKeypair(secret)).publicKey.toString("hex");
+  }
+
+  /**
    * 根据公钥（Uint8Array）生成地址的二进制数据
    *
    * @param publicKey
@@ -95,43 +135,14 @@ export class AsymmetricUtil {
   }
 
   /**
-   * 生成公私钥对
+   * 根据主密码生成地址
    *
    * @param secret
    * @returns
    */
-  async createKeypair(secret: string) {
-    return this.__keypairHelper.create(await this.__cryptoHelper.sha256(secret));
-  }
-
-  /**
-   * 根据私钥生成公私钥对
-   *
-   * @param secretKey
-   * @returns
-   */
-  createKeypairBySecretKey(secretKey: Uint8Array) {
-    return this.__keypairHelper.createBySecretKey(secretKey);
-  }
-
-  /**
-   * 根据私钥生成公私钥对
-   *
-   * @param secretKey
-   * @returns
-   */
-  createKeypairBySecretKeyString(secretKey: string) {
-    return this.__keypairHelper.createBySecretKey(this.__buffer.from(secretKey, "hex"));
-  }
-
-  /**
-   * 获取公钥
-   *
-   * @param secret
-   * @returns
-   */
-  async getPublicKeyFromSecret(secret: string) {
-    return (await this.createKeypair(secret)).publicKey.toString("hex");
+  async getAddressFromSecret(secret: string) {
+    const keypair = await this.createKeypair(secret);
+    return await this.getAddressFromPublicKey(keypair.publicKey);
   }
 
   /**

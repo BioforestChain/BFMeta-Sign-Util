@@ -1,6 +1,6 @@
 {
   "name": "@bfchain/sign-util",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "钱包生成签名的工具包",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
