@@ -1,4 +1,4 @@
-declare namespace BFChainSignUtil {
+declare namespace BFMetaSignUtil {
   namespace Buffer {
     type TypedArray =
       | Uint8Array
@@ -177,15 +177,15 @@ declare namespace BFChainSignUtil {
   }
 
   type Keypair = {
-    publicKey: BFChainSignUtil.Buffer.Buffer;
-    secretKey: BFChainSignUtil.Buffer.Buffer;
+    publicKey: BFMetaSignUtil.Buffer.Buffer;
+    secretKey: BFMetaSignUtil.Buffer.Buffer;
   };
 
   interface KeypairHelperInterface {
     /**生成公私钥对 */
     create(secretHash: Uint8Array): Keypair;
     /**非对称签名 */
-    detached_sign(hash: Uint8Array, secretKey: Uint8Array): BFChainSignUtil.Buffer.Buffer;
+    detached_sign(hash: Uint8Array, secretKey: Uint8Array): BFMetaSignUtil.Buffer.Buffer;
     /**非对称验签 */
     detached_verify(
       hash: Uint8Array,
@@ -217,19 +217,19 @@ declare namespace BFChainSignUtil {
   }
 
   interface CryptoAsyncHash {
-    update(data: BFChainSignUtil.Buffer.BinaryLike): this;
-    update(data: string, input_encoding: BFChainSignUtil.Buffer.Utf8AsciiLatin1Encoding): this;
-    digest(): BFChainSignUtil.Buffer.Buffer;
-    digest(encoding: BFChainSignUtil.Buffer.HexBase64Latin1Encoding): string;
+    update(data: BFMetaSignUtil.Buffer.BinaryLike): this;
+    update(data: string, input_encoding: BFMetaSignUtil.Buffer.Utf8AsciiLatin1Encoding): this;
+    digest(): BFMetaSignUtil.Buffer.Buffer;
+    digest(encoding: BFMetaSignUtil.Buffer.HexBase64Latin1Encoding): string;
   }
   interface CryptoHelperInterface {
     sha256(msg: string): Promise<Buffer>;
     sha256(msg: Uint8Array): Promise<Buffer>;
     md5(): Promise<CryptoAsyncHash>;
-    md5(data: BFChainSignUtil.Buffer.BinaryLike): Promise<BFChainSignUtil.Buffer.Buffer>;
+    md5(data: BFMetaSignUtil.Buffer.BinaryLike): Promise<BFMetaSignUtil.Buffer.Buffer>;
     ripemd160(): Promise<CryptoAsyncHash>;
     ripemd160(
-      data: BFChainSignUtil.Buffer.BinaryLike,
-    ): Promise<BFChainSignUtil.Buffer.Buffer>;
+      data: BFMetaSignUtil.Buffer.BinaryLike,
+    ): Promise<BFMetaSignUtil.Buffer.Buffer>;
   }
 }

@@ -45,7 +45,7 @@
         "tweetnacl/sign.ts",
         "tweetnacl/validate.ts",
         "tweetnacl/verify.ts",
-        "utils/asymmetricUtil.ts",
+        "utils/bfmetaSignUtil.ts",
         "utils/index.ts"
     ]
 }

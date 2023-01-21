@@ -4,19 +4,19 @@ import { KeypairHelper } from "../tweetnacl";
 import { encodeUTF8ToBinary } from "../encoding-utf8";
 import { utf8Slice } from "../oldBuffer";
 
-const FROZEN_PK_ADD_WM = new WeakMap<Uint8Array, BFChainSignUtil.Buffer.Buffer>();
+const FROZEN_PK_ADD_WM = new WeakMap<Uint8Array, BFMetaSignUtil.Buffer.Buffer>();
 
-export class AsymmetricUtil {
+export class BFMetaSignUtil {
   private __prefix = "b";
-  private __buffer: BFChainSignUtil.Buffer.BufferConstructor;
+  private __buffer: BFMetaSignUtil.Buffer.BufferConstructor;
   private __keypairHelper: KeypairHelper;
-  private __cryptoHelper: BFChainSignUtil.CryptoHelperInterface;
+  private __cryptoHelper: BFMetaSignUtil.CryptoHelperInterface;
   private __base58Helper: Base58Helper;
 
   constructor(
     prefix: string,
-    buffer: BFChainSignUtil.Buffer.BufferConstructor,
-    cryptoHelper: BFChainSignUtil.CryptoHelperInterface,
+    buffer: BFMetaSignUtil.Buffer.BufferConstructor,
+    cryptoHelper: BFMetaSignUtil.CryptoHelperInterface,
   ) {
     this.__prefix = prefix;
     this.__buffer = buffer;

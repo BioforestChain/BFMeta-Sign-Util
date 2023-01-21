@@ -1,11 +1,11 @@
 import { base58 } from "./base58";
 
 export class Base58Helper {
-  private __buffer: BFChainSignUtil.Buffer.BufferConstructor;
-  private __cryptoHelper: BFChainSignUtil.CryptoHelperInterface;
+  private __buffer: BFMetaSignUtil.Buffer.BufferConstructor;
+  private __cryptoHelper: BFMetaSignUtil.CryptoHelperInterface;
   constructor(
-    cryptoHelper: BFChainSignUtil.CryptoHelperInterface,
-    buffer: BFChainSignUtil.Buffer.BufferConstructor,
+    cryptoHelper: BFMetaSignUtil.CryptoHelperInterface,
+    buffer: BFMetaSignUtil.Buffer.BufferConstructor,
   ) {
     this.__buffer = buffer;
     this.__cryptoHelper = cryptoHelper;

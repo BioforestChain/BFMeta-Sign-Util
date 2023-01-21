@@ -1,12 +1,12 @@
-# @bfchain/sign-util
+# @bfmeta/sign-util
 
-    钱包工具包
+    BFMeta 生成签名的工具包
 
 ## 使用
 
 ```node
 export class CryptoHelper
-  implements BFChainSignUtil.CryptoHelperInterface
+  implements BFMetaSignUtil.CryptoHelperInterface
 {
   async sha256(msg: string | Uint8Array) {
     if (msg instanceof Uint8Array) {
@@ -35,31 +35,31 @@ export class CryptoHelper
   }
 }
 
-import { AsymmetricUtil } from "@bfchain/sign-util";
+import { BFMetaSignUtil } from "@bfmeta/sign-util";
 (async () => {
   const cryptoHelper = new CryptoHelper();
-  const asymmetricUtil = new AsymmetricUtil("c", Buffer as any, cryptoHelper);
+  const bfmetaSignUtil = new BFMetaSignUtil("c", Buffer as any, cryptoHelper);
 
-  const keypair = await asymmetricUtil.createKeypair("123");
-  const keypair2 = asymmetricUtil.createKeypairBySecretKey(keypair.secretKey);
+  const keypair = await bfmetaSignUtil.createKeypair("123");
+  const keypair2 = bfmetaSignUtil.createKeypairBySecretKey(keypair.secretKey);
   console.log(keypair2.publicKey.toString("hex"));
   // 获取公钥
   const publicKey = keypair.publicKey.toString("hex");
   console.log(publicKey);
   // 获取地址
-  const address = asymmetricUtil.getAddressFromPublicKey(keypair.publicKey);
+  const address = bfmetaSignUtil.getAddressFromPublicKey(keypair.publicKey);
   console.log(address);
-  console.log(asymmetricUtil.getAddressFromPublicKeyString(publicKey));
+  console.log(bfmetaSignUtil.getAddressFromPublicKeyString(publicKey));
   // 校验地址
-  console.log(asymmetricUtil.isAddress(address));
-  console.log(asymmetricUtil.isAddress("abc"));
+  console.log(bfmetaSignUtil.isAddress(address));
+  console.log(bfmetaSignUtil.isAddress("abc"));
   // 生成签名
   const msg = new Uint8Array(Buffer.from("abc"));
-  const signature = await asymmetricUtil.detachedSign(msg, keypair.secretKey);
+  const signature = await bfmetaSignUtil.detachedSign(msg, keypair.secretKey);
   console.log(signature.toString("hex"));
-  console.log(asymmetricUtil.signToString(msg, keypair.secretKey));
+  console.log(bfmetaSignUtil.signToString(msg, keypair.secretKey));
   // 验证签名
-  const result = asymmetricUtil.detachedVeriy(msg, signature, keypair.publicKey);
+  const result = bfmetaSignUtil.detachedVeriy(msg, signature, keypair.publicKey);
   console.log(result);
 })();
 ```

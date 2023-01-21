@@ -13,9 +13,9 @@ import {
 import { BoxLength, box, box_open } from "./box";
 import type { ByteArray } from "./array";
 
-export class KeypairHelper implements BFChainSignUtil.KeypairHelperInterface {
-  private __buffer: BFChainSignUtil.Buffer.BufferConstructor;
-  constructor(buffer: BFChainSignUtil.Buffer.BufferConstructor) {
+export class KeypairHelper implements BFMetaSignUtil.KeypairHelperInterface {
+  private __buffer: BFMetaSignUtil.Buffer.BufferConstructor;
+  constructor(buffer: BFMetaSignUtil.Buffer.BufferConstructor) {
     this.__buffer = buffer;
   }
 

@@ -1,7 +1,7 @@
 {
-  "name": "@bfchain/sign-util",
-  "version": "1.0.4",
-  "description": "钱包生成签名的工具包",
+  "name": "@bfmeta/sign-util",
+  "version": "1.0.5",
+  "description": "BFMeta 生成签名的工具包",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
   "scripts": {
@@ -13,9 +13,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:BioforestChain/BFChain-Sign-Util.git"
+    "url": "git@github.com:BioforestChain/BFMeta-Sign-Util.git"
   },
-  "author": "BFChain Team",
+  "author": "BFMeta Team",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^16.18.3",
