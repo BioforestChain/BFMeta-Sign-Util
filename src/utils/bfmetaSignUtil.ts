@@ -274,7 +274,7 @@ export class BFMetaSignUtil {
     secret: string,
     secondSecret: string,
   ) {
-    return (await this.createSecondKeypair(secret, secondSecret)).publicKey;
+    return (await this.createSecondKeypairDeprecated(secret, secondSecret)).publicKey;
   }
 
   /**
@@ -290,9 +290,9 @@ export class BFMetaSignUtil {
     secondSecret: string,
     encode = "hex",
   ) {
-    return (await this.getSecondPublicKeyFromSecretAndSecondSecret(secret, secondSecret)).toString(
-      encode,
-    );
+    return (
+      await this.getSecondPublicKeyFromSecretAndSecondSecretDeprecated(secret, secondSecret)
+    ).toString(encode);
   }
 
   /**
@@ -303,8 +303,10 @@ export class BFMetaSignUtil {
    */
   async checkSecondSecretDeprecated(secret: string, secondSecret: string, secondPublicKey: string) {
     return (
-      (await this.getSecondPublicKeyStringFromSecretAndSecondSecret(secret, secondSecret)) ===
-      secondPublicKey
+      (await this.getSecondPublicKeyStringFromSecretAndSecondSecretDeprecated(
+        secret,
+        secondSecret,
+      )) === secondPublicKey
     );
   }
 
