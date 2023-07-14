@@ -147,17 +147,12 @@ export class BFMetaSignUtil {
 
   /**
    * 根据主密码和二次密码生成密钥对
-   * 这里虽然用了md5,当因为sha256后,所以还算安全,不过也许可以换一种更加友好的方式
    *
    * @param secret 主密码
    * @param secondSecret 安全密码
    */
   async createSecondKeypair(secret: string, secondSecret: string) {
-    const md5Second = `${secret}-${(
-      await this.__cryptoHelper.md5(encodeUTF8ToBinary(secondSecret))
-    ).toString("hex")}`;
-    const secondHash = await this.__cryptoHelper.sha256(encodeUTF8ToBinary(md5Second));
-    return this.createKeypair(utf8Slice(secondHash, 0, secondHash.length));
+    return this.createKeypair(`${secret}-${secondSecret}`);
   }
 
   /**
@@ -249,6 +244,66 @@ export class BFMetaSignUtil {
   async checkSecondSecretV2(secret: string, secondSecret: string, secondPublicKey: string) {
     return (
       (await this.getSecondPublicKeyStringFromSecretAndSecondSecretV2(secret, secondSecret)) ===
+      secondPublicKey
+    );
+  }
+
+  /**
+   * 根据主密码和二次密码生成密钥对 -- 已弃用
+   *
+   * 这里虽然用了md5,当因为sha256后,所以还算安全,不过也许可以换一种更加友好的方式
+   *
+   * @param secret 主密码
+   * @param secondSecret 安全密码
+   */
+  async createSecondKeypairDeprecated(secret: string, secondSecret: string) {
+    const md5Second = `${secret}-${(
+      await this.__cryptoHelper.md5(encodeUTF8ToBinary(secondSecret))
+    ).toString("hex")}`;
+    const secondHash = await this.__cryptoHelper.sha256(encodeUTF8ToBinary(md5Second));
+    return this.createKeypair(utf8Slice(secondHash, 0, secondHash.length));
+  }
+
+  /**
+   * 获取安全公钥 -- 已弃用
+   * @param secret
+   * @param secondSecret
+   * @returns
+   */
+  async getSecondPublicKeyFromSecretAndSecondSecretDeprecated(
+    secret: string,
+    secondSecret: string,
+  ) {
+    return (await this.createSecondKeypair(secret, secondSecret)).publicKey;
+  }
+
+  /**
+   * 根据私钥获取公钥String -- 已弃用
+   *
+   * @param secret
+   * @param secondSecret
+   * @param encode
+   * @returns
+   */
+  async getSecondPublicKeyStringFromSecretAndSecondSecretDeprecated(
+    secret: string,
+    secondSecret: string,
+    encode = "hex",
+  ) {
+    return (await this.getSecondPublicKeyFromSecretAndSecondSecret(secret, secondSecret)).toString(
+      encode,
+    );
+  }
+
+  /**
+   * 校验二次密码公钥是否正确 -- 已弃用
+   * @param secret 主密码
+   * @param secondSecret 二次密码
+   * @param secondPublicKey 二次密码公钥
+   */
+  async checkSecondSecretDeprecated(secret: string, secondSecret: string, secondPublicKey: string) {
+    return (
+      (await this.getSecondPublicKeyStringFromSecretAndSecondSecret(secret, secondSecret)) ===
       secondPublicKey
     );
   }
