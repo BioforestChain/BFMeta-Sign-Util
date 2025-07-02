@@ -1,5 +1,5 @@
-import { BFMetaSignUtil } from "../src";
-import { CryptoHelper } from "./cryptoHelper";
+import { BFMetaSignUtil } from "../src/index.js";
+import { CryptoHelper } from "./cryptoHelper.js";
 
 (async () => {
   const cryptoHelper = new CryptoHelper();

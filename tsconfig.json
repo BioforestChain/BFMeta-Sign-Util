@@ -1,5 +1,11 @@
 {
-  "files": [],
   "include": [],
-  "references": [{ "path": "./src" }, { "path": "./test" }]
+  "references": [
+    {
+      "path": "./src/tsconfig.esm.json"
+    },
+    {
+      "path": "./test/tsconfig.cjs.json"
+    }
+  ]
 }

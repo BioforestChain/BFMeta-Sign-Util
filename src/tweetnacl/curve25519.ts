@@ -1,6 +1,6 @@
-import { ByteArray, NumArray } from "./array";
-import { _verify_32 } from "./verify";
-import { gf, squaring, multiplication } from "./core";
+import { ByteArray, NumArray } from "./array.js";
+import { _verify_32 } from "./verify.js";
+import { gf, squaring, multiplication } from "./core.js";
 
 export function set25519(r: NumArray, a: NumArray) {
   for (let i = 0; i < 16; i++) r[i] = a[i] | 0;

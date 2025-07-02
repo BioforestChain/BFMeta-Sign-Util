@@ -1,6 +1,6 @@
-import { ByteArray } from "./array";
-import { BoxLength, box, box_open, box_keyPair } from "./box";
-import { Blake2B, blake2b_init, blake2b_update, blake2b_final } from "./blake2b";
+import { ByteArray } from "./array.js";
+import { BoxLength, box, box_open, box_keyPair } from "./box.js";
+import { Blake2B, blake2b_init, blake2b_update, blake2b_final } from "./blake2b.js";
 
 export const enum SealedBoxLength {
   PublicKey = BoxLength.PublicKey,

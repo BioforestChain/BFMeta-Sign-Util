@@ -1,8 +1,8 @@
-import { Base58Helper } from "../base58";
-import { ed2curveHelper } from "../ed2curve";
-import { KeypairHelper } from "../tweetnacl";
-import { encodeUTF8ToBinary } from "../encoding-utf8";
-import { utf8Slice } from "../oldBuffer";
+import { Base58Helper } from "../base58/index.js";
+import { ed2curveHelper } from "../ed2curve/index.js";
+import { KeypairHelper } from "../tweetnacl/index.js";
+import { encodeUTF8ToBinary } from "../encoding-utf8/index.js";
+import { utf8Slice } from "../oldBuffer/index.js";
 
 const FROZEN_PK_ADD_WM = new WeakMap<Uint8Array, BFMetaSignUtil.Buffer.Buffer>();
 

@@ -1,7 +1,7 @@
-import { ByteArray, NumArray } from "./array";
-import { gf, _9, _121665, addition, subtraction, multiplication, squaring } from "./core";
-import { sel25519, inv25519, pack25519, unpack25519 } from "./curve25519";
-import { checkArrayTypes } from "./check";
+import { ByteArray, NumArray } from "./array.js";
+import { gf, _9, _121665, addition, subtraction, multiplication, squaring } from "./core.js";
+import { sel25519, inv25519, pack25519, unpack25519 } from "./curve25519.js";
+import { checkArrayTypes } from "./check.js";
 
 export const enum ScalarLength {
   Scalar = 32, // scalar bytes

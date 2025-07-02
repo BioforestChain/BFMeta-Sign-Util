@@ -1,4 +1,4 @@
-import { base58 } from "./base58";
+import { base58 } from "./base58.js";
 
 export class Base58Helper {
   private __buffer: BFMetaSignUtil.Buffer.BufferConstructor;

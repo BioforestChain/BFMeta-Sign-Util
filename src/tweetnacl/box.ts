@@ -1,10 +1,10 @@
-import { ByteArray } from "./array";
-import { _0 } from "./core";
-import { _randomBytes } from "./random";
-import { _hsalsa20, _sigma } from "./salsa20";
-import { _scalarMult, _scalarMult_base } from "./scalarmult";
-import { secretbox, secretbox_open, SecretBoxLength } from "./secretbox";
-import { checkArrayTypes, checkBoxLengths } from "./check";
+import { ByteArray } from "./array.js";
+import { _0 } from "./core.js";
+import { _randomBytes } from "./random.js";
+import { _hsalsa20, _sigma } from "./salsa20.js";
+import { _scalarMult, _scalarMult_base } from "./scalarmult.js";
+import { secretbox, secretbox_open, SecretBoxLength } from "./secretbox.js";
+import { checkArrayTypes, checkBoxLengths } from "./check.js";
 
 export const enum BoxLength {
   PublicKey = 32, // public key bytes

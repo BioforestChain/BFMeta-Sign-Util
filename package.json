@@ -1,22 +1,25 @@
 {
   "name": "@bfmeta/sign-util",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "BFMeta 生成签名的工具包",
   "type": "module",
-  "main": "build/src/index.js",
-  "types": "build/src/index.d.ts",
+  "main": "build/cjs/index.js",
+  "types": "build/cjs/index.d.ts",
   "exports": {
     ".": {
       "types": "./build/esm/index.d.ts",
-      "import": "./build/esm/index.js"
+      "import": "./build/esm/index.js",
+      "require": "./build/cjs/index.js"
     }
   },
+  "packageManager": "pnpm@10.12.2",
   "scripts": {
     "dev": "tsc --build -w",
-    "clear": "node ./scripts/clear.js",
-    "lsts": "node ./scripts/listAllFile.js",
+    "clean": "node ./scripts/clean.ts",
+    "fmt": "prettier --write \"./**/*.ts\"",
+    "lsts": "node ./scripts/listAllFile.ts",
     "build": "tsc --build ./tsconfig.all.json",
-    "rebuild": "npm run clear && npm run build",
+    "rebuild": "pnpm clean && pnpm build",
     "pub": "pnpm publish --access public --no-git-checks"
   },
   "repository": {
@@ -26,7 +29,9 @@
   "author": "BFMeta Team",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20",
+    "@gaubee/nodekit": "^0.10.1",
+    "@types/node": "^22",
+    "prettier": "^3.6.2",
     "typescript": "^5.8.3"
   },
   "files": [

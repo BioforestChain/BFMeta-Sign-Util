@@ -1,11 +1,12 @@
 {
-    "extends": "../tsconfig-base",
+    "extends": "../tsconfig-base.cjs.json",
     "compilerOptions": {
         "rootDir": "./",
-        "outDir": "../build/src"
+        "outDir": "../build/cjs"
     },
     "files": [
         "@types.ts",
+        "index.ts",
         "base58/base58.ts",
         "base58/base58Helper.ts",
         "base58/index.ts",
@@ -17,7 +18,6 @@
         "encoding-utf8/text.browser.ts",
         "encoding-utf8/text.node.ts",
         "encoding-utf8/text.ts",
-        "index.ts",
         "oldBuffer/index.ts",
         "oldBuffer/oldBuffer.ts",
         "platform/common.ts",

@@ -228,8 +228,6 @@ declare namespace BFMetaSignUtil {
     md5(): Promise<CryptoAsyncHash>;
     md5(data: BFMetaSignUtil.Buffer.BinaryLike): Promise<BFMetaSignUtil.Buffer.Buffer>;
     ripemd160(): Promise<CryptoAsyncHash>;
-    ripemd160(
-      data: BFMetaSignUtil.Buffer.BinaryLike,
-    ): Promise<BFMetaSignUtil.Buffer.Buffer>;
+    ripemd160(data: BFMetaSignUtil.Buffer.BinaryLike): Promise<BFMetaSignUtil.Buffer.Buffer>;
   }
 }

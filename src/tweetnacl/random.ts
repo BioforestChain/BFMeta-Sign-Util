@@ -1,4 +1,4 @@
-import { ByteArray } from "./array";
+import { ByteArray } from "./array.js";
 
 export function randomBytes(n: number): ByteArray {
   const b = new ByteArray(n);

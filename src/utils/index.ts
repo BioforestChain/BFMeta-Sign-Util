@@ -1,1 +1,1 @@
-export * from "./bfmetaSignUtil";
+export * from "./bfmetaSignUtil.js";

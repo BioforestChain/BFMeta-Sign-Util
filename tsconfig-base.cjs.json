@@ -2,9 +2,13 @@
   "compilerOptions": {
     "composite": true,
     "incremental": true,
-    "target": "esnext",
+    "target": "es2022",
     "module": "commonjs",
-    "lib": ["es6", "es2015.iterable", "esnext.asynciterable"],
+    "lib": [
+      "es6",
+      "es2015.iterable",
+      "esnext.asynciterable"
+    ],
     "useDefineForClassFields": false,
     "importHelpers": true,
     "declaration": true,
@@ -23,6 +27,9 @@
     "newLine": "lf",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "downlevelIteration": true
+    "downlevelIteration": false,
+    "types": [
+      "node"
+    ]
   }
 }

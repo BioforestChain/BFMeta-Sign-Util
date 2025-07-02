@@ -1,4 +1,4 @@
-import { ByteArray } from "./array";
+import { ByteArray } from "./array.js";
 
 export function _salsa20(o: ByteArray, p: ByteArray, k: ByteArray, c: ByteArray) {
   const j0 = (c[0] & 0xff) | ((c[1] & 0xff) << 8) | ((c[2] & 0xff) << 16) | ((c[3] & 0xff) << 24),

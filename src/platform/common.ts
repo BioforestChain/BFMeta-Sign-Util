@@ -1,4 +1,4 @@
-import { isNodejs } from "./diff";
+import { isNodejs } from "./diff.js";
 const checkType = (
   name: string,
   type: "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function",

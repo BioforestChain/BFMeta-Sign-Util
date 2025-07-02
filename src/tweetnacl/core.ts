@@ -1,4 +1,4 @@
-import { ByteArray, NumArray } from "./array";
+import { ByteArray, NumArray } from "./array.js";
 
 export function gf(init?: number[]): NumArray {
   const r = new NumArray(16);

@@ -1,5 +1,5 @@
-import { ByteArray, NumArray } from "./array";
-import { _verify_32 } from "./verify";
+import { ByteArray, NumArray } from "./array.js";
+import { _verify_32 } from "./verify.js";
 import {
   gf,
   gf0,
@@ -14,7 +14,7 @@ import {
   subtraction,
   I,
 } from "./core";
-import { _randomBytes } from "./random";
+import { _randomBytes } from "./random.js";
 import {
   set25519,
   sel25519,
@@ -24,8 +24,8 @@ import {
   par25519,
   neq25519,
 } from "./curve25519";
-import { _hash } from "./hash";
-import { checkArrayTypes } from "./check";
+import { _hash } from "./hash.js";
+import { checkArrayTypes } from "./check.js";
 
 export const enum SignLength {
   PublicKey = 32, // public key bytes

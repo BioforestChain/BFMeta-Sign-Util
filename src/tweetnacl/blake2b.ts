@@ -2,7 +2,7 @@
 // Adapted from the reference implementation in RFC7693
 // Ported to Javascript by DC - https://github.com/dcposch
 
-import { ByteArray, WordArray } from "./array";
+import { ByteArray, WordArray } from "./array.js";
 
 export interface Blake2B {
   b: ByteArray;

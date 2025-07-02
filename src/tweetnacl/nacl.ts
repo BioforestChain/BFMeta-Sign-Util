@@ -7,17 +7,17 @@
 // Ported to TypeScript in 2018 by K. <kayo@illumium.org>
 //
 
-export * from "./array";
-export * from "./validate";
-export * from "./convert";
-export * from "./verify";
-export * from "./random";
-export * from "./scalarmult";
-export * from "./secretbox";
-export * from "./box";
-export * from "./sign";
-export * from "./hash";
-export * from "./auth";
-export * from "./blake2s";
-export * from "./blake2b";
-export * from "./sealedbox";
+export * from "./array.js";
+export * from "./validate.js";
+export * from "./convert.js";
+export * from "./verify.js";
+export * from "./random.js";
+export * from "./scalarmult.js";
+export * from "./secretbox.js";
+export * from "./box.js";
+export * from "./sign.js";
+export * from "./hash.js";
+export * from "./auth.js";
+export * from "./blake2s.js";
+export * from "./blake2b.js";
+export * from "./sealedbox.js";

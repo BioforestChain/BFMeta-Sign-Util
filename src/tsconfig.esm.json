@@ -1,7 +1,51 @@
 {
-  "extends": "./tsconfig",
-  "mixin": ["./tsconfig.json", "../tsconfig-base.esm.json"],
-  "compilerOptions": {
-    "outDir": "../build/esm"
-  }
+    "extends": "../tsconfig-base.esm.json",
+    "compilerOptions": {
+        "rootDir": "./",
+        "outDir": "../build/esm"
+    },
+    "files": [
+        "@types.ts",
+        "index.ts",
+        "base58/base58.ts",
+        "base58/base58Helper.ts",
+        "base58/index.ts",
+        "convert/hexConvert.ts",
+        "convert/index.ts",
+        "ed2curve/ed2curve.ts",
+        "ed2curve/index.ts",
+        "encoding-utf8/index.ts",
+        "encoding-utf8/text.browser.ts",
+        "encoding-utf8/text.node.ts",
+        "encoding-utf8/text.ts",
+        "oldBuffer/index.ts",
+        "oldBuffer/oldBuffer.ts",
+        "platform/common.ts",
+        "platform/diff.browser.ts",
+        "platform/diff.ts",
+        "platform/index.ts",
+        "tweetnacl/array.ts",
+        "tweetnacl/auth.ts",
+        "tweetnacl/blake2b.ts",
+        "tweetnacl/blake2s.ts",
+        "tweetnacl/box.ts",
+        "tweetnacl/check.ts",
+        "tweetnacl/convert.ts",
+        "tweetnacl/core.ts",
+        "tweetnacl/curve25519.ts",
+        "tweetnacl/hash.ts",
+        "tweetnacl/index.ts",
+        "tweetnacl/nacl.ts",
+        "tweetnacl/poly1305.ts",
+        "tweetnacl/random.ts",
+        "tweetnacl/salsa20.ts",
+        "tweetnacl/scalarmult.ts",
+        "tweetnacl/sealedbox.ts",
+        "tweetnacl/secretbox.ts",
+        "tweetnacl/sign.ts",
+        "tweetnacl/validate.ts",
+        "tweetnacl/verify.ts",
+        "utils/bfmetaSignUtil.ts",
+        "utils/index.ts"
+    ]
 }

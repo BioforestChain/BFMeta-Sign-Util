@@ -1,17 +1,17 @@
-export * from "./sign";
-export * from "./box";
-export * from "./core";
-export * from "./hash";
-export * from "./curve25519";
+export * from "./sign.js";
+export * from "./box.js";
+export * from "./core.js";
+export * from "./hash.js";
+export * from "./curve25519.js";
 
 import {
   sign_detached,
   sign_detached_verify,
   sign_keyPair_fromSecretKey,
   sign_keyPair_fromSeed,
-} from "./sign";
-import { BoxLength, box, box_open } from "./box";
-import type { ByteArray } from "./array";
+} from "./sign.js";
+import { BoxLength, box, box_open } from "./box.js";
+import { ByteArray } from "./array.js";
 
 export class KeypairHelper implements BFMetaSignUtil.KeypairHelperInterface {
   private __buffer: BFMetaSignUtil.Buffer.BufferConstructor;

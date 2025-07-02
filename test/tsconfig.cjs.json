@@ -1,5 +1,5 @@
 {
-    "extends": "../tsconfig-base",
+    "extends": "../tsconfig-base.cjs.json",
     "compilerOptions": {
         "rootDir": "./",
         "outDir": "../build/test"
@@ -10,7 +10,7 @@
     ],
     "references": [
         {
-            "path": "../src/tsconfig.json"
+            "path": "../src/tsconfig.cjs.json"
         }
     ]
 }

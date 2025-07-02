@@ -8,7 +8,7 @@ import {
   pack25519,
   inv25519,
   unpackneg,
-} from "../tweetnacl";
+} from "../tweetnacl/index.js";
 
 /**
  * Converts Ed25519 public key to Curve25519 public key.

@@ -1,6 +1,6 @@
-import type { ByteArray } from "./array";
-import { SecretBoxLength } from "./secretbox";
-import { BoxLength } from "./box";
+import { ByteArray } from "./array.js";
+import { SecretBoxLength } from "./secretbox.js";
+import { BoxLength } from "./box.js";
 
 export function checkLengths(k: ByteArray, n: ByteArray) {
   if (k.length !== SecretBoxLength.Key) throw new Error("bad key size");
