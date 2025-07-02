@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig-base.cjs.json",
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "node"
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
   }
 }

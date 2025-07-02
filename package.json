@@ -1,6 +1,6 @@
 {
   "name": "@bfmeta/sign-util",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "BFMeta 生成签名的工具包",
   "type": "module",
   "main": "build/cjs/index.js",

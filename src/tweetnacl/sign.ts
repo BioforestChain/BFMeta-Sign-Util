@@ -13,7 +13,7 @@ import {
   Y,
   subtraction,
   I,
-} from "./core";
+} from "./core.js";
 import { _randomBytes } from "./random.js";
 import {
   set25519,
@@ -23,7 +23,7 @@ import {
   unpack25519,
   par25519,
   neq25519,
-} from "./curve25519";
+} from "./curve25519.js";
 import { _hash } from "./hash.js";
 import { checkArrayTypes } from "./check.js";
 

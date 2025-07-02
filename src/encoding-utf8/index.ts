@@ -1,5 +1,5 @@
 const UTF8_DECODE_CACHE = new WeakMap<Uint8Array, string>();
-import TextCoder from "./text";
+import TextCoder from "./text.js";
 const { TextEncoder, TextDecoder } = TextCoder();
 
 const encoder = new TextEncoder();
