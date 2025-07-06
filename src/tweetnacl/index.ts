@@ -14,8 +14,8 @@ import { BoxLength, box, box_open } from "./box.js";
 import { ByteArray } from "./array.js";
 
 export class KeypairHelper implements BFMetaSignUtil.KeypairHelperInterface {
-  private __buffer: BFMetaSignUtil.Buffer.BufferConstructor;
-  constructor(buffer: BFMetaSignUtil.Buffer.BufferConstructor) {
+  private __buffer: BufferConstructor;
+  constructor(buffer: BufferConstructor) {
     this.__buffer = buffer;
   }
 
