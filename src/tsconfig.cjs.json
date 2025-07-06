@@ -5,6 +5,7 @@
         "outDir": "../build/cjs"
     },
     "files": [
+        "@types.legacy.ts",
         "@types.ts",
         "index.ts",
         "base58/base58.ts",

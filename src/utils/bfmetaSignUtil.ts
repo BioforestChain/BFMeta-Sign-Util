@@ -4,18 +4,18 @@ import { KeypairHelper } from "../tweetnacl/index.js";
 import { encodeUTF8ToBinary } from "../encoding-utf8/index.js";
 import { utf8Slice } from "../oldBuffer/index.js";
 
-const FROZEN_PK_ADD_WM = new WeakMap<Uint8Array, BFMetaSignUtil.Buffer.Buffer>();
+const FROZEN_PK_ADD_WM = new WeakMap<Uint8Array, Buffer>();
 
 export class BFMetaSignUtil {
   private __prefix = "b";
-  private __buffer: BFMetaSignUtil.Buffer.BufferConstructor;
+  private __buffer: BufferConstructor;
   private __keypairHelper: KeypairHelper;
   private __cryptoHelper: BFMetaSignUtil.CryptoHelperInterface;
   private __base58Helper: Base58Helper;
 
   constructor(
     prefix: string,
-    buffer: BFMetaSignUtil.Buffer.BufferConstructor,
+    buffer: BufferConstructor,
     cryptoHelper: BFMetaSignUtil.CryptoHelperInterface,
   ) {
     this.__prefix = prefix;
@@ -176,7 +176,7 @@ export class BFMetaSignUtil {
   async getSecondPublicKeyStringFromSecretAndSecondSecret(
     secret: string,
     secondSecret: string,
-    encode = "hex",
+    encode: BufferEncoding = "hex",
   ) {
     return (await this.getSecondPublicKeyFromSecretAndSecondSecret(secret, secondSecret)).toString(
       encode,
@@ -228,7 +228,7 @@ export class BFMetaSignUtil {
   async getSecondPublicKeyStringFromSecretAndSecondSecretV2(
     secret: string,
     secondSecret: string,
-    encode = "hex",
+    encode: BufferEncoding = "hex",
   ) {
     return (
       await this.getSecondPublicKeyFromSecretAndSecondSecretV2(secret, secondSecret)
@@ -288,7 +288,7 @@ export class BFMetaSignUtil {
   async getSecondPublicKeyStringFromSecretAndSecondSecretDeprecated(
     secret: string,
     secondSecret: string,
-    encode = "hex",
+    encode: BufferEncoding = "hex",
   ) {
     return (
       await this.getSecondPublicKeyFromSecretAndSecondSecretDeprecated(secret, secondSecret)
@@ -322,6 +322,13 @@ export class BFMetaSignUtil {
   }
 
   /**
+   * @deprecated use detachedVerify
+   */
+  get detachedVeriy() {
+    return this.detachedVerify;
+  }
+
+  /**
    * 验证签名
    *
    * @param message
@@ -329,7 +336,7 @@ export class BFMetaSignUtil {
    * @param publicKeyBuffer
    * @returns
    */
-  async detachedVeriy(
+  async detachedVerify(
     message: Uint8Array,
     signatureBuffer: Uint8Array,
     publicKeyBuffer: Uint8Array,
