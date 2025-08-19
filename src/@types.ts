@@ -1,5 +1,5 @@
 export {};
-import type {} from "./@types.legacy.js";
+export {} from "./@types.legacy.js";
 
 declare global {
   namespace BFMetaSignUtil {
