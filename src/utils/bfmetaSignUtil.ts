@@ -176,7 +176,7 @@ export class BFMetaSignUtil {
   async getSecondPublicKeyStringFromSecretAndSecondSecret(
     secret: string,
     secondSecret: string,
-    encode: BufferEncoding = "hex",
+    encode: BFMetaSignUtil.Buffer.BinaryToTextEncoding = "hex",
   ) {
     return (await this.getSecondPublicKeyFromSecretAndSecondSecret(secret, secondSecret)).toString(
       encode,
@@ -228,7 +228,7 @@ export class BFMetaSignUtil {
   async getSecondPublicKeyStringFromSecretAndSecondSecretV2(
     secret: string,
     secondSecret: string,
-    encode: BufferEncoding = "hex",
+    encode: BFMetaSignUtil.Buffer.BinaryToTextEncoding = "hex",
   ) {
     return (
       await this.getSecondPublicKeyFromSecretAndSecondSecretV2(secret, secondSecret)
@@ -288,7 +288,7 @@ export class BFMetaSignUtil {
   async getSecondPublicKeyStringFromSecretAndSecondSecretDeprecated(
     secret: string,
     secondSecret: string,
-    encode: BufferEncoding = "hex",
+    encode: BFMetaSignUtil.Buffer.BinaryToTextEncoding = "hex",
   ) {
     return (
       await this.getSecondPublicKeyFromSecretAndSecondSecretDeprecated(secret, secondSecret)
